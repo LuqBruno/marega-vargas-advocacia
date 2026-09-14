@@ -1,0 +1,32 @@
+node_modules/
+.next/
+.qa/
+tmp/
+out/
+*.tsbuildinfo
+.env*
+!.env.example
+*.log
+
+# Materiais internos e arquivos de apresentação não pertencem ao repositório público.
+/AGENTS.md
+/STATUS.md
+/docs/
+/divulgacao/
+/output/
+/INICIAR-APRESENTACAO.cmd
+/*.jpeg
+/*.png
+/scripts/*.py
+/scripts/prepare-*.mjs
+
+# O repositório público recebe somente os assets efetivamente usados no site.
+/public/images/client/alice-vargas-*
+/public/images/client/hellen/*
+!/public/images/client/hellen/hellen-1.jpg
+!/public/images/client/hellen/hellen-2.jpg
+/public/images/escritorio-juridico-familia-sucessoes.png
+/public/images/instagram/*
+!/public/images/instagram/alice-vargas-instagram-01.jpg
+!/public/images/instagram/alice-vargas-instagram-04.jpg
+!/public/images/instagram/alice-vargas-instagram-09.jpg
