@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { assetPath } from './asset-path';
 import './globals.css';
 import SiteIntro from './site-intro';
 import { allowIndexing, siteOrigin } from './site-settings';
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
       'Família, patrimônio, negócios e contratos. Cada caso exige uma leitura individualizada.',
     images: [
       {
-        url: '/images/brand/marega-vargas-champanhe.webp',
+        url: assetPath('/images/brand/marega-vargas-champanhe.webp'),
         width: 800,
         height: 319,
         alt: 'Maréga e Vargas — Advocacia Especializada',
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Maréga e Vargas | Advocacia Especializada',
     description: 'Clareza jurídica para pessoas, famílias e negócios.',
-    images: ['/images/brand/marega-vargas-champanhe.webp'],
+    images: [assetPath('/images/brand/marega-vargas-champanhe.webp')],
   },
 };
 

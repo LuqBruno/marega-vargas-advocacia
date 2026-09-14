@@ -1,10 +1,11 @@
 import Image from 'next/image';
+import { assetPath } from '../asset-path';
 
 export default function OfficeLogo({ light = false }: { light?: boolean }) {
   return (
     <Image
       className="office-logo"
-      src={light ? '/images/brand/marega-vargas-champanhe.webp' : '/images/brand/marega-vargas-grafite.webp'}
+      src={assetPath(light ? '/images/brand/marega-vargas-champanhe.webp' : '/images/brand/marega-vargas-grafite.webp')}
       alt="Maréga e Vargas — Advocacia Especializada"
       width={800}
       height={319}

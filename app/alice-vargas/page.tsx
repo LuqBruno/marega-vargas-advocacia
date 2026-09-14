@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { assetPath } from '../asset-path';
 import type { Metadata } from 'next';
 import { contentTopics, office, practiceAreas, profile, whatsappHref } from '../site-data';
 import SiteHeader from '../components/site-header';
@@ -59,7 +60,7 @@ export default function Home() {
 
         <figure className="hero-portrait">
           <Image
-            src="/images/client/alice/alice-vargas-05-hd.webp"
+            src={assetPath('/images/client/alice/alice-vargas-05-hd.webp')}
             alt="Retrato profissional da advogada Alice Vargas"
             fill
             priority
@@ -110,7 +111,7 @@ export default function Home() {
       <section id="sobre" className="about-section" aria-labelledby="about-title" tabIndex={-1}>
         <div className="about-photo primary-photo">
           <Image
-            src="/images/client/alice/alice-vargas-07-hd.webp"
+            src={assetPath('/images/client/alice/alice-vargas-07-hd.webp')}
             alt="Retrato profissional da advogada Alice Vargas em seu escritório"
             fill
             sizes="(max-width: 760px) 90vw, (max-width: 1600px) 36vw, 540px"

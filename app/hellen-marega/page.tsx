@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { assetPath } from '../asset-path';
 import Link from 'next/link';
 import SiteHeader from '../components/site-header';
 import OfficeLogo from '../components/office-logo';
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Hellen Maréga | Direito Civil e Empresarial — Maréga e Vargas',
   description: 'Hellen Maréga, OAB/SC nº 40.580. Advogada especialista em Direito Civil e Empresarial no escritório Maréga e Vargas, em Tubarão/SC.',
   alternates: { canonical: '/hellen-marega' },
-  openGraph: { images: ['/images/client/hellen/hellen-1.jpg'] },
+  openGraph: { images: [assetPath('/images/client/hellen/hellen-1.jpg')] },
 };
 
 const hellenSections = [
@@ -31,7 +32,7 @@ export default function HellenPage() {
             <div className="hero-actions"><a className="primary-button" href={hellenWhatsappHref} target="_blank" rel="noopener noreferrer">Conversar com Hellen <span aria-hidden="true">↗</span></a><a className="text-link" href="#atuacao">Conhecer a atuação <span aria-hidden="true">↓</span></a></div>
           </div>
           <figure className="hellen-hero-photo">
-            <Image src="/images/client/hellen/hellen-1.jpg" alt="Retrato profissional de Hellen Maréga" fill priority sizes="(max-width: 760px) 100vw, 46vw" />
+            <Image src={assetPath('/images/client/hellen/hellen-1.jpg')} alt="Retrato profissional de Hellen Maréga" fill priority sizes="(max-width: 760px) 100vw, 46vw" />
           </figure>
         </section>
 
@@ -46,7 +47,7 @@ export default function HellenPage() {
         </section>
 
         <section id="sobre" className="hellen-about" aria-labelledby="hellen-about-title">
-          <div className="hellen-editorial-photo"><Image src="/images/client/hellen/hellen-2.jpg" alt="Retrato profissional de Hellen Maréga" fill sizes="(max-width: 760px) 100vw, 44vw" /></div>
+          <div className="hellen-editorial-photo"><Image src={assetPath('/images/client/hellen/hellen-2.jpg')} alt="Retrato profissional de Hellen Maréga" fill sizes="(max-width: 760px) 100vw, 44vw" /></div>
           <div className="hellen-about-copy"><p className="eyebrow">{hellenProfile.oab}</p><h2 id="hellen-about-title">Técnica para orientar. Honestidade para mostrar o cenário.</h2><p>Pós-graduada e especialista em Direito Civil e Empresarial, Hellen comunica uma advocacia baseada em análise, estratégia e transparência — inclusive quando a orientação técnica não é a resposta mais confortável.</p><dl><div><dt>Especialização</dt><dd>Direito Civil e Empresarial</dd></div><div><dt>Escritório</dt><dd>Maréga e Vargas · Tubarão/SC</dd></div></dl></div>
         </section>
 

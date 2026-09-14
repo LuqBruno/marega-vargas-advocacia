@@ -1,3 +1,7 @@
+function assetPath(path = '') {
+  return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${path}`;
+}
+
 export const profile = {
   name: 'Alice Vargas',
   title: 'Advogada especialista em Direito de Família e Sucessões',
@@ -45,7 +49,7 @@ export const faqs = [
 ];
 
 export const contentTopics = [
-  { image: '/images/instagram/alice-vargas-instagram-01.jpg', alt: 'Publicação de Alice Vargas sobre divisão de herança', label: 'Sucessões' },
-  { image: '/images/instagram/alice-vargas-instagram-04.jpg', alt: 'Publicação de Alice Vargas sobre alteração do nome de um filho', label: 'Família' },
-  { image: '/images/instagram/alice-vargas-instagram-09.jpg', alt: 'Publicação de Alice Vargas sobre divisão de bens no divórcio', label: 'Partilha de bens' },
+  { image: assetPath('/images/instagram/alice-vargas-instagram-01.jpg'), alt: 'Publicação de Alice Vargas sobre divisão de herança', label: 'Sucessões' },
+  { image: assetPath('/images/instagram/alice-vargas-instagram-04.jpg'), alt: 'Publicação de Alice Vargas sobre alteração do nome de um filho', label: 'Família' },
+  { image: assetPath('/images/instagram/alice-vargas-instagram-09.jpg'), alt: 'Publicação de Alice Vargas sobre divisão de bens no divórcio', label: 'Partilha de bens' },
 ];

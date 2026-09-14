@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
   output: isGitHubPages ? 'export' : undefined,
   basePath,
   assetPrefix: basePath || undefined,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   trailingSlash: isGitHubPages,
   images: { unoptimized: isGitHubPages },
   ...(isGitHubPages ? {} : {

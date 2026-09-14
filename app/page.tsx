@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { assetPath } from './asset-path';
 import Link from 'next/link';
 import LocationMap from './components/location-map';
 import OfficeLogo from './components/office-logo';
@@ -71,7 +72,7 @@ export default function OfficeHome() {
           <div className="professional-profiles">
             <article className="professional-profile">
               <Link className="professional-photo" href="/alice-vargas" aria-label="Conhecer Alice Vargas e sua atuação">
-                <Image src="/images/client/alice/alice-vargas-07-hd.webp" alt="Retrato profissional de Alice Vargas" fill sizes="(max-width: 760px) 100vw, 42vw" />
+                <Image src={assetPath('/images/client/alice/alice-vargas-07-hd.webp')} alt="Retrato profissional de Alice Vargas" fill sizes="(max-width: 760px) 100vw, 42vw" />
               </Link>
               <div className="professional-copy">
                 <p className="eyebrow">Família e Sucessões</p>
@@ -85,7 +86,7 @@ export default function OfficeHome() {
 
             <article className="professional-profile professional-profile-reverse">
               <Link className="professional-photo" href="/hellen-marega" aria-label="Conhecer Hellen Maréga e sua atuação">
-                <Image src="/images/client/hellen/hellen-1.jpg" alt="Retrato profissional de Hellen Maréga" fill sizes="(max-width: 760px) 100vw, 42vw" />
+                <Image src={assetPath('/images/client/hellen/hellen-1.jpg')} alt="Retrato profissional de Hellen Maréga" fill sizes="(max-width: 760px) 100vw, 42vw" />
               </Link>
               <div className="professional-copy">
                 <p className="eyebrow">Civil e Empresarial</p>
