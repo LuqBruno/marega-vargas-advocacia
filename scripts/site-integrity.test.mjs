@@ -135,7 +135,7 @@ test('Office address and hours match the supplied client data', () => {
   assert.doesNotMatch(sources + aliceData + hellenData, /segunda a sexta|24 horas/i);
   assert.match(locationMap, /href=\{mapsHref\}/);
   assert.match(locationMap, /src=\{mapsEmbedHref\}/);
-  assert.match(locationMap, /loading="lazy"/);
+  assert.match(locationMap, /loading="eager"/);
 });
 
 test('Loader now represents the office rather than a single professional', () => {

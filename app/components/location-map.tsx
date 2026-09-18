@@ -6,7 +6,7 @@ export default function LocationMap() {
       <iframe
         src={mapsEmbedHref}
         title="Localização do escritório Maréga e Vargas no Google Maps"
-        loading="lazy"
+        loading="eager"
         allowFullScreen
         referrerPolicy="no-referrer-when-downgrade"
       />
