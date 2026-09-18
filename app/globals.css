@@ -762,7 +762,7 @@ h2 {
 
 .office-professionals { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(50px,9vw,150px); padding: clamp(80px,9vw,140px) var(--page-x); background: var(--ivory); color: var(--wine-dark); }
 .professionals-copy h2 { max-width: 660px; }
-.professionals-copy > p:last-child { max-width: 560px; color: #5b5550; font-size: 17px; line-height: 1.65; }
+.professionals-copy > p:last-child:not(.eyebrow) { max-width: 560px; color: #5b5550; font-size: 17px; line-height: 1.65; }
 .professional-index { border-top: 1px solid rgba(41,39,40,.22); }
 .professional-index a { display: grid; min-height: 148px; grid-template-columns: 66px 1fr auto; gap: 22px; align-items: center; border-bottom: 1px solid rgba(41,39,40,.22); }
 .professional-index a > span { font: italic 26px/1 var(--serif); color: var(--wine); }
@@ -950,6 +950,8 @@ h2 {
   position: sticky;
   top: 112px;
 }
+
+.professionals-copy .eyebrow { color: var(--ivory); }
 
 .professionals-copy h2 { max-width: 570px; }
 
