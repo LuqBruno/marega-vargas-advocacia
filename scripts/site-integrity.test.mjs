@@ -206,7 +206,7 @@ test('New approved portrait assets are optimized without replacing the originals
 
 test('Requested institutional revision is present without the removed blocks', () => {
   assert.match(officePage, /Família, patrimônio,[\s\S]*negócios e contratos/);
-  assert.match(officePage, /Cada caso exige uma leitura individualizada/);
+  assert.doesNotMatch(officePage, /Cada caso exige uma leitura individualizada|Conheça nossa atuação|A profissional certa para a questão|Especialidades distintas\. O mesmo compromisso/);
   assert.doesNotMatch(officePage, /Duas especialistas|Um olhar inteiro|office-principles|professional-index|office-route-preview/);
   assert.doesNotMatch(officePage, /id="escritorio"|Conheça nosso escritório/);
   assert.ok(officePage.indexOf('id="areas"') < officePage.indexOf('id="profissionais"'));

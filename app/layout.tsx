@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { assetPath } from './asset-path';
 import './globals.css';
+import './client-revision-2026-09-18.css';
 import SiteIntro from './site-intro';
 import { allowIndexing, siteOrigin } from './site-settings';
 

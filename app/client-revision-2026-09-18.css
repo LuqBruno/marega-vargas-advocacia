@@ -1,0 +1,84 @@
+/* Retorno das clientes em 18/09/2026.
+   Os blocos riscados foram removidos do conteúdo em todos os tamanhos.
+   Este arquivo concentra apenas o refinamento de composição decorrente disso. */
+
+.office-hero {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.office-hero-copy {
+  max-width: 1120px;
+}
+
+.office-areas .office-section-intro {
+  grid-template-columns: 1fr;
+  margin-bottom: clamp(30px, 4vw, 54px);
+}
+
+.office-professionals {
+  grid-template-columns: 1fr;
+}
+
+.professionals-copy {
+  position: static;
+}
+
+.professional-profiles {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+@media (max-width: 760px) {
+  .office-hero {
+    min-height: auto;
+  }
+
+  .office-hero-copy {
+    padding-bottom: 72px;
+  }
+
+  .office-area-row h3 {
+    font-size: clamp(18px, 5.15vw, 21px);
+    letter-spacing: -.035em;
+    white-space: nowrap;
+  }
+
+  .office-content {
+    overflow: hidden;
+  }
+
+  .office-article-grid {
+    display: grid;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(76%, 1fr);
+    gap: 18px;
+    margin-inline: calc(var(--page-x) * -1);
+    padding: 0 var(--page-x) 22px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: none;
+  }
+
+  .office-article-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .office-article {
+    scroll-snap-align: start;
+  }
+
+  .office-article:nth-child(2) {
+    margin-top: 34px;
+  }
+
+  .office-article:nth-child(3) {
+    margin-top: 68px;
+  }
+
+  .office-article > div {
+    aspect-ratio: .8625;
+  }
+}

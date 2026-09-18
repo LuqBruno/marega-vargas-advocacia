@@ -36,18 +36,12 @@ export default function OfficeHome() {
         <section id="inicio" className="office-hero" aria-labelledby="office-title">
           <div className="office-hero-copy">
             <h1 id="office-title">Família, patrimônio,<br /><em>negócios e contratos.</em></h1>
-            <p className="office-lead">Cada caso exige uma leitura individualizada.</p>
-            <a className="text-link office-discover" href="#areas">Conheça nossa atuação <span aria-hidden="true">↓</span></a>
-          </div>
-          <div className="office-hero-signature" aria-label="Maréga e Vargas — Advocacia Especializada">
-            <OfficeLogo light />
           </div>
         </section>
 
-        <section id="areas" className="office-areas section-shell" aria-labelledby="areas-title">
+        <section id="areas" className="office-areas section-shell" aria-label="Áreas de atuação">
           <header className="office-section-intro">
             <p className="eyebrow">Áreas de atuação</p>
-            <h2 id="areas-title">A profissional certa para a questão que precisa ser compreendida.</h2>
           </header>
           <div className="office-area-list">
             <Link href="/alice-vargas#atuacao" className="office-area-row">
@@ -63,10 +57,9 @@ export default function OfficeHome() {
           </div>
         </section>
 
-        <section id="profissionais" className="office-professionals" aria-labelledby="professionals-title">
+        <section id="profissionais" className="office-professionals" aria-label="Quem somos">
           <header className="professionals-copy">
             <p className="eyebrow">Quem somos</p>
-            <h2 id="professionals-title">Especialidades distintas. O mesmo compromisso com a técnica.</h2>
           </header>
 
           <div className="professional-profiles">
