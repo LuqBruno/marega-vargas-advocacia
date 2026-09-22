@@ -7,11 +7,11 @@ import sharp from 'sharp';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const read = file => readFile(resolve(root, file), 'utf8');
-const [officePage, alicePage, hellenPage, header, profileContact, locationMap, aliceData, hellenData, layout, intro, css, settings, robots, logo] = await Promise.all([
+const [officePage, alicePage, hellenPage, header, profileContact, locationMap, aliceData, hellenData, layout, intro, css, clientRevisionCss, settings, robots, logo] = await Promise.all([
   'app/page.tsx', 'app/alice-vargas/page.tsx', 'app/hellen-marega/page.tsx',
   'app/components/site-header.tsx', 'app/components/profile-contact.tsx',
   'app/components/location-map.tsx', 'app/site-data.ts', 'app/hellen-data.ts',
-  'app/layout.tsx', 'app/site-intro.tsx', 'app/globals.css', 'app/site-settings.ts',
+  'app/layout.tsx', 'app/site-intro.tsx', 'app/globals.css', 'app/client-revision-2026-09-18.css', 'app/site-settings.ts',
   'app/robots.ts', 'app/components/office-logo.tsx',
 ].map(read));
 const sources = officePage + alicePage + hellenPage + header + profileContact + locationMap + layout;
@@ -218,6 +218,8 @@ test('Requested institutional revision is present without the removed blocks', (
   assert.match(officePage, /Instituto Brasileiro de Direito de Família \(IBDFAM\)/);
   assert.match(officePage, /Agende uma consulta\.<\/h2>/);
   assert.doesNotMatch(officePage, /com a profissional da sua área|className="office-footer"/);
+  assert.match(css + clientRevisionCss, /grid-template-columns:\s*repeat\(3, minmax\(0, 1fr\)\)/);
+  assert.doesNotMatch(clientRevisionCss, /grid-auto-flow:\s*column|overflow-x:\s*auto|scroll-snap-type|nth-child\(2\)[^{]*\{[^}]*margin-top:\s*34px/);
   assert.doesNotMatch(officePage, /\bblog\b/i);
   assert.doesNotMatch(alicePage + hellenPage, /className="faq-section"/);
   assert.doesNotMatch(alicePage + hellenPage, /<figcaption>/);
