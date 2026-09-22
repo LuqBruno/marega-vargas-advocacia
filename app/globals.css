@@ -1462,11 +1462,13 @@ h2 {
 }
 
 @media (max-width: 760px) {
-  .office-hero { min-height: calc(100svh - 70px); grid-template-columns: 1fr; }
-  .office-hero-copy { min-height: 0; padding: 54px var(--page-x) 28px; }
+  .office-hero { min-height: auto; grid-template-columns: 1fr; }
+  .office-hero-copy { min-height: 0; padding: 48px var(--page-x) 46px; }
   .office-hero-copy h1 { font-size: clamp(48px, 14vw, 66px); }
   .office-hero-signature { justify-self: end; margin: 8px var(--page-x) 58px; }
   .office-hero-signature .office-logo { width: 184px; }
+  .office-areas { padding-block: 48px 54px; }
+  .office-areas .office-section-intro { gap: 0; margin-bottom: 24px; }
   .office-professionals { padding-block: 64px; }
   .professional-profiles { gap: 80px; }
   .professional-profile { grid-template-columns: 1fr; gap: 28px; }

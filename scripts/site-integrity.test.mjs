@@ -215,6 +215,9 @@ test('Requested institutional revision is present without the removed blocks', (
   assert.match(hellenPage, /hellen-practice light-chapter/);
   assert.equal((aliceData.match(/number: '0[1-6]'/g) ?? []).length, 6);
   assert.match(officePage, /Conteúdo jurídico no Instagram/);
+  assert.match(officePage, /Instituto Brasileiro de Direito de Família \(IBDFAM\)/);
+  assert.match(officePage, /Agende uma consulta\.<\/h2>/);
+  assert.doesNotMatch(officePage, /com a profissional da sua área|className="office-footer"/);
   assert.doesNotMatch(officePage, /\bblog\b/i);
   assert.doesNotMatch(alicePage + hellenPage, /className="faq-section"/);
   assert.doesNotMatch(alicePage + hellenPage, /<figcaption>/);

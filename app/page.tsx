@@ -72,7 +72,7 @@ export default function OfficeHome() {
                 <h3>Alice Vargas</h3>
                 <small>{profile.oab}</small>
                 <p>Graduada em Direito, Pós-Graduada em Direito Processual Civil e em Direito de Família e Sucessões. Há mais de 12 anos atua em questões familiares e sucessórias.</p>
-                <p>Professora Universitária, Mentora de Jovens Advogados da Subseção de Tubarão/SC e membro do Instituto Brasileiro de Direito de Família.</p>
+                <p>Professora Universitária, Mentora de Jovens Advogados da Subseção de Tubarão/SC e membro do Instituto Brasileiro de Direito de Família (IBDFAM).</p>
                 <Link className="text-link" href="/alice-vargas#atuacao">Conhecer a atuação de Alice <span aria-hidden="true">↗</span></Link>
               </div>
             </article>
@@ -113,7 +113,7 @@ export default function OfficeHome() {
           <div className="office-contact-copy">
             <OfficeLogo light />
             <p className="eyebrow">Contato</p>
-            <h2 id="office-contact-title">Agende uma consulta com a profissional da sua área.</h2>
+            <h2 id="office-contact-title">Agende uma consulta.</h2>
             <p>Escolha a área para consultar disponibilidade e combinar o atendimento diretamente pelo WhatsApp.</p>
             <div className="office-contact-links">
               <Link href="/alice-vargas#contato">Família e Sucessões <span aria-hidden="true">↗</span></Link>
@@ -128,11 +128,6 @@ export default function OfficeHome() {
         </section>
       </main>
 
-      <footer className="office-footer">
-        <OfficeLogo light />
-        <span>Conteúdo informativo. Cada caso exige análise individual.</span>
-        <a href="#inicio">Voltar ao início ↑</a>
-      </footer>
     </>
   );
 }
