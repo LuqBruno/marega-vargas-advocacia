@@ -5,7 +5,7 @@ import Link from 'next/link';
 import SiteHeader from '../components/site-header';
 import OfficeLogo from '../components/office-logo';
 import ProfileContact from '../components/profile-contact';
-import { hellenPractice, hellenProfile, hellenWhatsappHref } from '../hellen-data';
+import { hellenPosts, hellenPractice, hellenProfile, hellenWhatsappHref } from '../hellen-data';
 
 export const metadata: Metadata = {
   title: 'Hellen Maréga | Direito Civil e Empresarial — Maréga e Vargas',
@@ -16,12 +16,6 @@ export const metadata: Metadata = {
 
 const hellenSections = [
   ['#atuacao', 'Áreas de atuação'], ['#sobre', 'Sobre Hellen'], ['#conteudo', 'Conteúdos'], ['#contato', 'Contato'],
-] as const;
-
-const hellenPosts = [
-  { image: '/images/instagram/hellen-inventarios.webp', label: 'Inventários', alt: 'Publicação de Hellen: faleceu alguém da sua família? É importante saber o que vem depois.', href: 'https://www.instagram.com/p/DNoWt3XuIEj/' },
-  { image: '/images/instagram/hellen-negocios.webp', label: 'Negócios', alt: 'Publicação de Hellen sobre negócio proibido entre cônjuges.', href: 'https://www.instagram.com/p/DGikbqMulkS/' },
-  { image: '/images/instagram/hellen-patrimonio.webp', label: 'Patrimônio', alt: 'Publicação de Hellen sobre cláusula de inalienabilidade como ferramenta de proteção do patrimônio.', href: 'https://www.instagram.com/p/DChE6QYvW6N/' },
 ] as const;
 
 export default function HellenPage() {

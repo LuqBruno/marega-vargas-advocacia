@@ -35,7 +35,7 @@ e sem imagens quebradas.
 - seis áreas de Alice em grade 3 × 2 no desktop e as áreas confirmadas de Hellen no mesmo padrão visual;
 - capítulos de áreas e primeiro contato com fundo claro e texto escuro;
 - seção “Conheça nosso escritório” removida; endereço mantido somente no contato final;
-- bloco de conteúdo jurídico ligado aos perfis profissionais;
+- bloco de conteúdo jurídico com três publicações de Alice e três de Hellen, em duas linhas alinhadas de três também no celular;
 - contato com logo oficial, endereço, horário e Google Maps;
 - FAQ removido;
 - paleta em grafite `#292728`, champagne `#D5C7B4` e bordô `#65282E`.

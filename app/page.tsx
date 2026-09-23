@@ -5,7 +5,7 @@ import LocationMap from './components/location-map';
 import OfficeLogo from './components/office-logo';
 import SiteHeader from './components/site-header';
 import { contentTopics, office, profile } from './site-data';
-import { hellenProfile } from './hellen-data';
+import { hellenPosts, hellenProfile } from './hellen-data';
 
 const officeNav = [
   ['#inicio', 'Escritório'],
@@ -18,6 +18,7 @@ const officeArticles = [
   { ...contentTopics[0], author: 'Alice Vargas', href: profile.instagram },
   { ...contentTopics[1], author: 'Alice Vargas', href: profile.instagram },
   { ...contentTopics[2], author: 'Alice Vargas', href: profile.instagram },
+  ...hellenPosts.map((post) => ({ ...post, image: assetPath(post.image), author: 'Hellen Maréga' })),
 ] as const;
 
 export default function OfficeHome() {
@@ -95,12 +96,12 @@ export default function OfficeHome() {
         <section id="conteudos" className="office-content section-shell" aria-labelledby="content-title">
           <header className="office-section-intro">
             <p className="eyebrow">Conteúdo jurídico</p>
-            <div><h2 id="content-title">Conteúdo jurídico no Instagram.</h2><p>Uma seleção de temas publicados no perfil profissional de Alice.</p></div>
+            <div><h2 id="content-title">Conteúdo jurídico no Instagram.</h2><p>Uma seleção de temas publicados nos perfis profissionais de Alice e Hellen.</p></div>
           </header>
           <div className="office-article-grid">
             {officeArticles.map((article) => (
               <a key={`${article.author}-${article.label}`} href={article.href} target="_blank" rel="noopener noreferrer" className="office-article">
-                <div><Image src={article.image} alt={article.alt} fill sizes="(max-width: 680px) 100vw, 31vw" /></div>
+                <div><Image src={article.image} alt={article.alt} fill sizes="(max-width: 760px) 28vw, 31vw" /></div>
                 <small>{article.author}</small>
                 <h3>{article.label}</h3>
                 <span>Ver no Instagram ↗</span>
