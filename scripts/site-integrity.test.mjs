@@ -91,7 +91,7 @@ test('Hellen page uses only verified identity and official profile contact', () 
 });
 
 test('Hellen practice is limited to confirmed civil, contracts and business framing', () => {
-  assert.deepEqual(hellen.hellenPractice.map(area => area.title), ['Direito Civil', 'Contratos', 'Direito Empresarial']);
+  assert.deepEqual(hellen.hellenPractice.map(area => area.title), ['Contratos', 'Indenizações', 'Inventários', 'Assessoria empresarial']);
   assert.match(hellenPage, /A pertinência ao caso concreto é confirmada no atendimento/);
   assert.doesNotMatch(hellenPage + hellenData, /direito trabalhista|direito tributário|direito previdenciário|direito penal/i);
 });

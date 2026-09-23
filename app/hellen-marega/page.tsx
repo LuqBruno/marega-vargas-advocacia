@@ -18,6 +18,12 @@ const hellenSections = [
   ['#atuacao', 'Áreas de atuação'], ['#sobre', 'Sobre Hellen'], ['#conteudo', 'Conteúdos'], ['#contato', 'Contato'],
 ] as const;
 
+const hellenPosts = [
+  { image: '/images/instagram/hellen-inventarios.webp', label: 'Inventários', alt: 'Publicação de Hellen: faleceu alguém da sua família? É importante saber o que vem depois.', href: 'https://www.instagram.com/p/DNoWt3XuIEj/' },
+  { image: '/images/instagram/hellen-negocios.webp', label: 'Negócios', alt: 'Publicação de Hellen sobre negócio proibido entre cônjuges.', href: 'https://www.instagram.com/p/DGikbqMulkS/' },
+  { image: '/images/instagram/hellen-patrimonio.webp', label: 'Patrimônio', alt: 'Publicação de Hellen sobre cláusula de inalienabilidade como ferramenta de proteção do patrimônio.', href: 'https://www.instagram.com/p/DChE6QYvW6N/' },
+] as const;
+
 export default function HellenPage() {
   return (
     <>
@@ -36,25 +42,27 @@ export default function HellenPage() {
           </figure>
         </section>
 
-        <div className="credentials-bar"><span>Direito Civil</span><span>Contratos e decisões conscientes</span><span>Direito Empresarial</span></div>
+        <div className="credentials-bar hellen-credentials"><span>Direito Civil e Empresarial</span></div>
 
         <section id="atuacao" className="hellen-practice light-chapter section-shell" aria-labelledby="hellen-practice-title">
-          <header className="section-heading"><div><p className="eyebrow">Áreas de atuação</p></div><h2 id="hellen-practice-title">A estratégia começa quando o cenário fica claro.</h2></header>
+          <header className="section-heading"><div><p className="eyebrow">Áreas de atuação</p></div><h2 id="hellen-practice-title">Orientação para decidir. Estratégia para agir</h2></header>
           <div className="hellen-practice-grid">
-            {hellenPractice.map(area => <article key={area.title}><span className="practice-number">{area.number}</span><h3>{area.title}</h3><p>{area.text}</p><ul>{area.tags.map(tag => <li key={tag}>{tag}</li>)}</ul></article>)}
+            {hellenPractice.map(area => <article key={area.title}><span className="practice-number">{area.number}</span><h3>{area.title}</h3><p>{area.text}</p></article>)}
           </div>
           <p className="scope-note">As áreas acima refletem a especialização e os temas profissionais publicados por Hellen. A pertinência ao caso concreto é confirmada no atendimento.</p>
         </section>
 
         <section id="sobre" className="hellen-about" aria-labelledby="hellen-about-title">
           <div className="hellen-editorial-photo"><Image src={assetPath('/images/client/hellen/hellen-2.jpg')} alt="Retrato profissional de Hellen Maréga" fill sizes="(max-width: 760px) 100vw, 44vw" /></div>
-          <div className="hellen-about-copy"><p className="eyebrow">{hellenProfile.oab}</p><h2 id="hellen-about-title">Técnica para orientar. Honestidade para mostrar o cenário.</h2><p>Pós-graduada e especialista em Direito Civil e Empresarial, Hellen comunica uma advocacia baseada em análise, estratégia e transparência — inclusive quando a orientação técnica não é a resposta mais confortável.</p><dl><div><dt>Especialização</dt><dd>Direito Civil e Empresarial</dd></div><div><dt>Escritório</dt><dd>Maréga e Vargas · Tubarão/SC</dd></div></dl></div>
+          <div className="hellen-about-copy"><p className="eyebrow">Hellen Maréga · {hellenProfile.oab}</p><h2 id="hellen-about-title">Técnica para orientar. Transparência para apresentar riscos e soluções.</h2><p>Pós-graduada e especialista em Direito Civil e Empresarial, Hellen Maréga possui mais de 12 anos de experiência jurídica e atua como Mentora de Jovens Advogados na Subseção de Tubarão/SC.</p><p>Sua atuação prioriza a análise criteriosa e a estratégia individualizada para cada caso.</p></div>
         </section>
 
         <section id="conteudo" className="hellen-perspective section-shell" aria-labelledby="perspective-title">
-          <header><p className="eyebrow">A forma de trabalhar</p><h2 id="perspective-title">Ler o cenário antes de escolher o caminho.</h2></header>
-          <blockquote className="perspective-statement"><p>“A escolha deixa de ser impulsiva e passa a ser consciente.”</p><cite>Reflexão apresentada por Hellen em conteúdo sobre penalidades contratuais</cite></blockquote>
-          <a className="text-link perspective-link" href={hellenProfile.instagram} target="_blank" rel="noopener noreferrer">Acompanhar o perfil profissional <span aria-hidden="true">↗</span></a>
+          <header><p className="eyebrow">Conhecimento fornece segurança.</p><h2 id="perspective-title">A escolha deixa de ser impulsiva e passa a ser consciente.</h2></header>
+          <div className="office-article-grid hellen-posts" aria-label="Publicações de Hellen no Instagram">
+            {hellenPosts.map(post => <a key={post.href} className="office-article" href={post.href} target="_blank" rel="noopener noreferrer" aria-label={`${post.label}: explorar publicação de Hellen no Instagram (abre em nova aba)`}><div><Image src={assetPath(post.image)} alt={post.alt} fill sizes="(max-width: 760px) 28vw, 30vw" /></div><h3>{post.label}</h3><span>Explorar no perfil ↗</span></a>)}
+          </div>
+          <a className="text-link perspective-link" href={hellenProfile.instagram} target="_blank" rel="noopener noreferrer">Explorar no perfil <span aria-hidden="true">↗</span></a>
         </section>
         <section className="process-section light-chapter section-shell" aria-labelledby="hellen-process-title">
           <div className="process-intro">
@@ -70,8 +78,8 @@ export default function HellenPage() {
         <ProfileContact
           name={hellenProfile.name}
           oab={hellenProfile.oab}
-          heading="Vamos conversar sobre o cenário que você precisa compreender?"
-          description="Entre em contato com Hellen para consultar disponibilidade e combinar o atendimento. Comece pelo assunto geral e preserve seus dados pessoais."
+          heading="O que fazer para conversar sobre o meu caso?"
+          description="Entre em contato com Hellen para consultar disponibilidade e programar a análise do caso. Comece pelo assunto geral e preserve seus dados pessoais."
           whatsapp={hellenProfile.whatsapp}
           whatsappHref={hellenWhatsappHref}
           instagram={hellenProfile.instagram}

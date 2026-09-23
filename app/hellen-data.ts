@@ -13,21 +13,23 @@ export const hellenWhatsappHref = `https://wa.me/${hellenProfile.whatsapp.replac
 export const hellenPractice = [
   {
     number: '01',
-    title: 'Direito Civil',
-    text: 'Análise técnica de relações, obrigações e situações da vida civil, com comunicação direta sobre riscos, caminhos e consequências.',
-    tags: ['Relações civis', 'Obrigações', 'Estratégia'],
+    title: 'Contratos',
+    text: 'Elaboração, intermediação e revisão de contratos para clareza e segurança nos compromissos assumidos.',
   },
   {
     number: '02',
-    title: 'Contratos',
-    text: 'Leitura jurídica das cláusulas e penalidades para que decisões contratuais sejam tomadas com clareza, consciência e segurança.',
-    tags: ['Cláusulas', 'Penalidades', 'Decisão consciente'],
+    title: 'Indenizações',
+    text: 'Análise de danos e responsabilidades para reparação de prejuízos.',
   },
   {
     number: '03',
-    title: 'Direito Empresarial',
-    text: 'Orientação jurídica voltada às necessidades empresariais, com atenção à prevenção de conflitos e à qualidade das decisões.',
-    tags: ['Empresas', 'Prevenção', 'Segurança jurídica'],
+    title: 'Inventários',
+    text: 'Regularização da sucessão, com organização documental, levantamento do patrimônio e definição dos direitos dos herdeiros.',
+  },
+  {
+    number: '04',
+    title: 'Assessoria empresarial',
+    text: 'Orientação jurídica para prevenir riscos, minimizar prejuízos e fornecer segurança ao negócio.',
   },
 ];
 

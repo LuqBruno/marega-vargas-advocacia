@@ -29,7 +29,15 @@
   margin-inline: auto;
 }
 
+/* Revisão de Hellen: quatro áreas e capas oficiais completas. */
+.hellen-credentials { grid-template-columns: 1fr; }
+.hellen-page .hellen-practice-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.hellen-page .hellen-practice-grid article { min-height: 0; }
+.hellen-posts .office-article > div { aspect-ratio: 4 / 5; }
+.hellen-posts .office-article img { object-fit: contain; }
+
 @media (max-width: 760px) {
+  .hellen-page .hellen-practice-grid { grid-template-columns: 1fr; }
   .office-hero {
     min-height: auto;
   }

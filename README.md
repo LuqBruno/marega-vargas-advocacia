@@ -74,7 +74,7 @@ abrem uma conversa com texto sugerido; nenhuma mensagem é enviada automaticamen
 
 ## Pendências de conteúdo
 
-- biografia institucional completa de Hellen, ainda não recebida;
+- biografia de Hellen recebida e aplicada nesta revisão; aguardar validação final das clientes;
 - dias da semana e modalidades de atendimento;
 - domínio definitivo e aprovação final para indexação;
 - confirmação comercial dos materiais de Instagram antes da publicação pública.
