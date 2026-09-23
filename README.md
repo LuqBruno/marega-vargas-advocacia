@@ -37,6 +37,7 @@ e sem imagens quebradas.
 - seção “Conheça nosso escritório” removida; endereço mantido somente no contato final;
 - bloco de conteúdo jurídico com três publicações de Alice e três de Hellen, em duas linhas alinhadas de três também no celular;
 - contato com logo oficial, endereço, horário e Google Maps;
+- páginas individuais de Alice e Hellen encerradas no mapa, sem rodapé adicional;
 - FAQ removido;
 - paleta em grafite `#292728`, champagne `#D5C7B4` e bordô `#65282E`.
 

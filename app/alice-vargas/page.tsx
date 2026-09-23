@@ -3,7 +3,6 @@ import { assetPath } from '../asset-path';
 import type { Metadata } from 'next';
 import { contentTopics, office, practiceAreas, profile, whatsappHref } from '../site-data';
 import SiteHeader from '../components/site-header';
-import OfficeLogo from '../components/office-logo';
 import ProfileContact from '../components/profile-contact';
 
 export const metadata: Metadata = {
@@ -193,18 +192,6 @@ export default function Home() {
         instagram={profile.instagram}
       />
       </main>
-
-      <footer className="site-footer">
-        <a className="footer-brand" href="#inicio" aria-label="Maréga e Vargas — voltar ao início da página de Alice Vargas"><OfficeLogo light /></a>
-        <div className="footer-links">
-          <a href={profile.instagram} target="_blank" rel="noreferrer" aria-label="Instagram da Alice (abre em nova aba)">Instagram ↗</a>
-          <a href={profile.jusbrasil} target="_blank" rel="noreferrer" aria-label="Perfil profissional no Jusbrasil (abre em nova aba)">Jusbrasil ↗</a>
-          <a href="#inicio">Voltar ao início ↑</a>
-        </div>
-        <p className="legal-note">
-          Conteúdo informativo. Cada caso exige análise individual, sem garantia de resultado.
-        </p>
-      </footer>
 
       <a className="whatsapp-contact" href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alice no WhatsApp (abre em nova aba)">
         WhatsApp da Alice <span aria-hidden="true">↗</span>

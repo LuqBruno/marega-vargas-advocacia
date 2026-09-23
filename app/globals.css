@@ -1162,6 +1162,7 @@ h2 {
   gap: clamp(34px, 5vw, 76px);
   align-items: start;
   padding: clamp(72px, 8vw, 120px) var(--page-x);
+  padding-bottom: 0;
   border-top: 1px solid var(--line);
   background: var(--wine-dark);
   color: var(--ivory);
@@ -1299,6 +1300,7 @@ h2 {
   .office-article > div { aspect-ratio: 1.08; }
   .office-contact,
   .contact-section { grid-template-columns: 1fr; gap: 42px; padding: 64px var(--page-x); }
+  .contact-section { padding-bottom: 0; }
   .office-contact .location-map,
   .contact-section .location-map { grid-column: auto; }
   .office-address { padding-top: 0; }

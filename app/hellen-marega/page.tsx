@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { assetPath } from '../asset-path';
-import Link from 'next/link';
 import SiteHeader from '../components/site-header';
-import OfficeLogo from '../components/office-logo';
 import ProfileContact from '../components/profile-contact';
 import { hellenPosts, hellenPractice, hellenProfile, hellenWhatsappHref } from '../hellen-data';
 
@@ -80,7 +78,6 @@ export default function HellenPage() {
         />
       </main>
 
-      <footer className="site-footer"><Link className="footer-brand" href="/"><OfficeLogo light /></Link><div className="footer-links"><a href={hellenProfile.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a><Link href="/">Conhecer o escritório ↗</Link><a href="#inicio">Voltar ao início ↑</a></div><p className="legal-note">Conteúdo informativo. Cada caso exige análise individual, sem garantia de resultado.</p></footer>
       <a className="whatsapp-contact" href={hellenWhatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp da Hellen <span aria-hidden="true">↗</span></a>
     </>
   );
