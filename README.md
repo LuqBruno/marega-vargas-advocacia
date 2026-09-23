@@ -38,6 +38,7 @@ e sem imagens quebradas.
 - bloco de conteúdo jurídico com três publicações de Alice e três de Hellen, em duas linhas alinhadas de três também no celular;
 - contato com logo oficial, endereço, horário e Google Maps;
 - páginas individuais de Alice e Hellen encerradas no mapa, sem rodapé adicional;
+- transição sutil entre as três páginas, com entrada do conteúdo em 520 ms (420 ms no celular), cabeçalho estável e respeito a movimento reduzido;
 - FAQ removido;
 - paleta em grafite `#292728`, champagne `#D5C7B4` e bordô `#65282E`.
 

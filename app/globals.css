@@ -49,6 +49,22 @@ body {
 main, .site-header, .site-footer { width: 100%; max-width: 1600px; margin-inline: auto; }
 main { background: var(--wine-dark); }
 
+/* A short editorial entrance for navigation between the three pages. */
+.page-entry { display: contents; }
+.page-entry main {
+  animation: pageEnter 520ms cubic-bezier(.22, 1, .36, 1) both;
+}
+@keyframes pageEnter {
+  from { opacity: 0; transform: translate3d(0, 16px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@media (max-width: 760px) {
+  .page-entry main { animation-duration: 420ms; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-entry main { animation: none; }
+}
+
 /* One graphite canvas; cream provides hierarchy without changing the layout. */
 main:focus, section[tabindex]:focus { outline: none; }
 .skip-link { position: fixed; top: 12px; left: 12px; z-index: 400; padding: 12px 20px; transform: translateY(-180%); background: var(--ivory); color: var(--wine-dark); }
