@@ -1,0 +1,326 @@
+/* Acabamento final — 06/10/2026.
+   Somente refinamento visual: textos, rotas, ordem das seções e paleta aprovada permanecem.
+   Todo movimento é complementar; sem ele (ou com movimento reduzido) a página fica completa. */
+
+:root {
+  --wine-line: #7d343b;
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* Abertura do escritório: luz suave e linhas finas em vez das faixas repetidas.
+   O bloco de texto fica transparente para o fundo ser contínuo (antes as linhas só apareciam à direita). */
+.office-hero-copy { background: transparent; }
+.office-hero::before {
+  background:
+    radial-gradient(55% 75% at 100% 0%, rgba(213, 199, 180, .05), transparent 70%),
+    radial-gradient(45% 65% at 0% 100%, rgba(101, 40, 46, .14), transparent 72%),
+    linear-gradient(rgba(213, 199, 180, .03) 1px, transparent 1px);
+  background-size: auto, auto, 100% 84px;
+}
+
+/* Fio vertical em bordô à direita: o detalhe gráfico que assina a abertura sem acrescentar texto. */
+.office-hero::after {
+  position: absolute;
+  top: 18%;
+  right: var(--page-x);
+  bottom: 18%;
+  width: 1px;
+  content: '';
+  background: linear-gradient(transparent, var(--wine-line) 30%, rgba(213, 199, 180, .35) 70%, transparent);
+  transform-origin: top;
+  pointer-events: none;
+}
+
+/* Sublinhado em bordô desenhado sob o trecho em itálico dos títulos principais. */
+h1 em {
+  text-decoration: none;
+  background-image: linear-gradient(var(--wine-line), var(--wine-line));
+  background-repeat: no-repeat;
+  background-position: 0 92%;
+  background-size: 100% 1px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .office-hero-copy h1,
+  .hellen-hero-copy > *,
+  .hero-intro > * {
+    animation: finishRise 900ms var(--ease-out) both;
+  }
+  .office-hero-copy h1 em,
+  .hellen-hero-copy h1 em,
+  .hero-intro h1 em {
+    animation: finishUnderline 1100ms var(--ease-out) 520ms both;
+  }
+  .office-hero::after { animation: finishRule 1400ms var(--ease-out) 300ms both; }
+  .hellen-hero-copy > :nth-child(2), .hero-intro > :nth-child(2) { animation-delay: 80ms; }
+  .hellen-hero-copy > :nth-child(3), .hero-intro > :nth-child(3) { animation-delay: 160ms; }
+  .hellen-hero-copy > :nth-child(4), .hero-intro > :nth-child(4) { animation-delay: 240ms; }
+
+  /* Enquanto a vinheta de abertura cobre a tela, a entrada espera por ela. */
+  body:has(.alice-loader:not([hidden]):not([data-opening])) :is(.office-hero-copy h1, .office-hero-copy h1 em, .office-hero::after, .hellen-hero-copy > *, .hellen-hero-copy h1 em, .hero-intro > *, .hero-intro h1 em) {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes finishRise {
+  from { opacity: 0; transform: translate3d(0, 22px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes finishUnderline {
+  from { background-size: 0 1px; }
+  to { background-size: 100% 1px; }
+}
+@keyframes finishRule {
+  from { transform: scaleY(0); opacity: 0; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+/* Rótulos de seção com um fio curto antes do texto, no ritmo editorial do escritório. */
+.office-section-intro > .eyebrow,
+.professionals-copy > .eyebrow,
+.section-heading .eyebrow,
+.office-contact-copy > .eyebrow,
+.contact-copy > .eyebrow,
+.hellen-perspective > header > .eyebrow,
+.process-intro > .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.office-section-intro > .eyebrow::before,
+.professionals-copy > .eyebrow::before,
+.section-heading .eyebrow::before,
+.office-contact-copy > .eyebrow::before,
+.contact-copy > .eyebrow::before,
+.hellen-perspective > header > .eyebrow::before,
+.process-intro > .eyebrow::before {
+  width: 28px;
+  height: 1px;
+  flex: none;
+  content: '';
+  background: currentColor;
+  opacity: .6;
+}
+.light-chapter .eyebrow::before,
+.office-areas .eyebrow::before { background: var(--wine-line); opacity: 1; }
+
+/* Áreas do escritório: marcação lateral em bordô e seta que avança ao passar o cursor. */
+.office-area-row { position: relative; }
+.office-area-row::before {
+  position: absolute;
+  top: 18%;
+  bottom: 18%;
+  left: 0;
+  width: 2px;
+  content: '';
+  background: var(--wine-line);
+  transform: scaleY(0);
+  transition: transform 420ms var(--ease-out);
+}
+.office-area-row > strong { transition: transform 320ms var(--ease-out); }
+.office-area-row .practice-number { transition: color 260ms ease; }
+.office-area-row:hover::before,
+.office-area-row:focus-visible::before { transform: scaleY(1); }
+.office-area-row:hover > strong,
+.office-area-row:focus-visible > strong { transform: translate(4px, -4px); }
+.office-areas .office-area-row:hover .practice-number { color: var(--wine); }
+
+/* Retratos: moldura flutuante simétrica, que se aproxima da foto ao passar o cursor. */
+.professional-photo,
+.about-photo.primary-photo,
+.hellen-editorial-photo {
+  outline: 1px solid rgba(213, 199, 180, .26);
+  outline-offset: 14px;
+  transition: outline-offset 500ms var(--ease-out), outline-color 300ms ease;
+}
+.professional-photo:hover { outline-offset: 9px; outline-color: rgba(213, 199, 180, .42); }
+.hellen-about .hellen-editorial-photo { outline-color: rgba(41, 39, 40, .22); }
+
+/* Publicações: leve elevação, fio claro na capa e seta que acompanha o gesto. */
+.office-article > div,
+.content-image {
+  box-shadow: 0 0 0 1px rgba(213, 199, 180, .1), 0 18px 40px -28px rgba(0, 0, 0, .8);
+  transition: transform 500ms var(--ease-out), box-shadow 500ms var(--ease-out);
+}
+.office-article:hover > div,
+.office-article:focus-visible > div,
+.content-card:hover .content-image {
+  transform: translate3d(0, -4px, 0);
+  box-shadow: 0 0 0 1px rgba(213, 199, 180, .24), 0 26px 50px -26px rgba(0, 0, 0, .9);
+}
+.office-article > span { transition: color 220ms ease, letter-spacing 320ms var(--ease-out); }
+.office-article:hover > span { color: var(--ink); }
+
+/* Botões e links: a seta avança, reforçando a ação sem mudar o desenho. */
+.primary-button span,
+.light-button span,
+.header-cta span,
+.whatsapp-contact span,
+.text-link span,
+.office-contact-links a span,
+.location-map > a span {
+  display: inline-block;
+  transition: transform 320ms var(--ease-out);
+}
+:is(.primary-button, .light-button, .header-cta, .whatsapp-contact, .text-link, .office-contact-links a, .location-map > a):hover span {
+  transform: translate(3px, -3px);
+}
+.text-link,
+.office-contact-links a {
+  background-image: linear-gradient(var(--wine-line), var(--wine-line));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 1px;
+  transition: background-size 480ms var(--ease-out), color 200ms ease;
+}
+.text-link:hover,
+.office-contact-links a:hover { background-size: 100% 1px; }
+
+/* Mapa um pouco mais presente ao interagir. */
+.location-map iframe { transition: filter 400ms ease; }
+.location-map:hover iframe { filter: grayscale(.6) saturate(.6) contrast(.98); }
+
+@media (max-width: 760px) {
+  .office-hero::after { display: none; }
+  .professional-photo,
+  .about-photo.primary-photo,
+  .hellen-editorial-photo { outline-offset: 6px; }
+  .professional-photo:hover { outline-offset: 6px; }
+  .office-area-row::before { left: -10px; }
+  .office-section-intro > .eyebrow::before,
+  .professionals-copy > .eyebrow::before,
+  .section-heading .eyebrow::before,
+  .office-contact-copy > .eyebrow::before,
+  .contact-copy > .eyebrow::before,
+  .hellen-perspective > header > .eyebrow::before,
+  .process-intro > .eyebrow::before { width: 20px; }
+}
+
+@media (hover: none) {
+  .office-article:hover > div,
+  .content-card:hover .content-image { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .office-area-row::before,
+  .office-area-row > strong,
+  .office-article > div,
+  .content-image,
+  .professional-photo,
+  .text-link,
+  .office-contact-links a,
+  .location-map iframe { transition: none; }
+}
+
+/* Vinheta do lacre — protótipo de 06/10/2026, ainda sem aprovação das clientes.
+   O lacre carimba, a luz passa pelo monograma, a cera se parte em diagonal (como a barra de "AM/")
+   e as duas metades da tela se abrem sobre a página. ~2,2 s, uma vez por sessão. */
+.seal-intro {
+  background:
+    radial-gradient(60% 50% at 50% 46%, rgba(101, 40, 46, .22), transparent 70%),
+    var(--wine-dark);
+  isolation: isolate;
+  animation: aliceLoaderOut 1ms linear 2200ms forwards;
+  will-change: auto;
+}
+.seal-intro[data-opening] { background: transparent; }
+/* As portas só assumem a tela no momento do corte; antes disso, a emenda diagonal não aparece. */
+.seal-intro:not([data-opening]) .seal-door { visibility: hidden; }
+.seal-door {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(60% 50% at 50% 46%, rgba(101, 40, 46, .22), transparent 70%),
+    var(--wine-dark);
+  animation: sealDoor 760ms cubic-bezier(.7, 0, .2, 1) 1400ms both;
+}
+.seal-door-a { clip-path: polygon(0 0, 58% 0, 42% 100%, 0 100%); --door-x: -100%; }
+.seal-door-b { clip-path: polygon(58% 0, 100% 0, 100% 100%, 42% 100%); --door-x: 100%; }
+/* Fio bordô que acende ao longo do corte e se apaga enquanto as metades se abrem. */
+.seal-intro::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: '';
+  clip-path: polygon(calc(58% - 1px) 0, calc(58% + 1px) 0, calc(42% + 1px) 100%, calc(42% - 1px) 100%);
+  background: linear-gradient(transparent, #a3505a 30%, var(--wine-line) 70%, transparent);
+  opacity: 0;
+  animation: sealCut 700ms ease-out 1150ms both;
+}
+
+.seal-stage {
+  position: relative;
+  z-index: 2;
+  width: min(210px, 50vw);
+  aspect-ratio: 1;
+  filter: drop-shadow(0 18px 22px rgba(0, 0, 0, .55));
+  animation: sealDrop 560ms cubic-bezier(.3, 0, .15, 1) 120ms both;
+}
+.seal-half { position: absolute; inset: 0; }
+.seal-half-a { clip-path: polygon(0 0, 58% 0, 54% 18%, 61% 34%, 49% 52%, 54% 68%, 44% 84%, 42% 100%, 0 100%); --break-x: -46px; --break-r: -16deg; }
+.seal-half-b { clip-path: polygon(58% 0, 100% 0, 100% 100%, 42% 100%, 44% 84%, 54% 68%, 49% 52%, 61% 34%, 54% 18%); --break-x: 46px; --break-r: 13deg; }
+.seal-half { animation: sealBreak 560ms cubic-bezier(.55, 0, .75, .3) 1360ms both; }
+.wax-seal { display: block; width: 100%; height: 100%; overflow: visible; }
+
+.seal-ripple {
+  position: absolute;
+  inset: 4%;
+  border: 1px solid rgba(213, 199, 180, .5);
+  border-radius: 50%;
+  opacity: 0;
+  animation: sealRipple 760ms cubic-bezier(.2, .7, .3, 1) 600ms both;
+}
+.seal-shine {
+  position: absolute;
+  inset: 18%;
+  z-index: 3;
+  border-radius: 50%;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 240, 220, .38) 50%, transparent 65%) no-repeat;
+  background-size: 260% 100%;
+  mix-blend-mode: soft-light;
+  opacity: 0;
+  animation: sealShine 760ms ease-in-out 760ms both;
+}
+
+.seal-intro > p {
+  z-index: 2;
+  margin-top: 30px;
+  animation: sealCopy 1000ms ease both 600ms;
+}
+.seal-intro .intro-skip { animation: sealCopy 1500ms ease both 300ms; }
+
+@keyframes sealDrop {
+  0% { opacity: 0; transform: scale(1.9) rotate(-8deg); }
+  70% { opacity: 1; transform: scale(.94) rotate(0); }
+  84% { transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes sealRipple {
+  from { opacity: .7; transform: scale(.92); }
+  to { opacity: 0; transform: scale(1.7); }
+}
+@keyframes sealShine {
+  0% { opacity: 1; background-position: 120% 0; }
+  100% { opacity: 1; background-position: -30% 0; }
+}
+@keyframes sealCut {
+  0% { opacity: 0; }
+  35%, 55% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes sealBreak {
+  0% { opacity: 1; transform: none; }
+  50% { opacity: 0; }
+  100% { opacity: 0; transform: translate3d(var(--break-x), 90px, 0) rotate(var(--break-r)); }
+}
+@keyframes sealDoor {
+  to { transform: translate3d(var(--door-x), 0, 0); }
+}
+@keyframes sealCopy {
+  0% { opacity: 0; }
+  25%, 62% { opacity: 1; }
+  100% { opacity: 0; }
+}

@@ -1,3 +1,8 @@
+/* Identificação de Hellen reforçada (retorno de 06/10/2026). Cores de texto e superfícies seguem as atuais. */
+.hellen-about-copy > .eyebrow { color: #292728; font-weight: 700; }
+/* Biografias institucionais em branco sobre o grafite atual (pedido de 06/10/2026). O grafite não muda. */
+.professional-copy > p:not(.eyebrow) { color: #fff; }
+
 /* Retorno das clientes em 18/09/2026.
    Os blocos riscados foram removidos do conteúdo em todos os tamanhos.
    Este arquivo concentra apenas o refinamento de composição decorrente disso. */

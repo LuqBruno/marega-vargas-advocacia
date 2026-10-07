@@ -52,7 +52,7 @@ export default function OfficeHome() {
             </Link>
             <Link href="/hellen-marega#atuacao" className="office-area-row">
               <span className="practice-number">02</span>
-              <div><small>Hellen Maréga</small><h3>Direito Civil e Empresarial</h3><p>Contratos, indenizações, inventários e negócios</p></div>
+              <div><small>Hellen Maréga</small><h3>Direito Civil e Empresarial</h3><p>Contratos, indenizações, inventários e negócios.</p></div>
               <strong aria-hidden="true">↗</strong>
             </Link>
           </div>

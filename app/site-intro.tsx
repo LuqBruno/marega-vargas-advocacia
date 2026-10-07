@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef } from 'react';
-import OfficeLogo from './components/office-logo';
+import WaxSeal from './components/wax-seal';
 
 const sessionKey = 'marega-vargas-intro-seen-v1';
 
@@ -27,7 +27,9 @@ export default function SiteIntro() {
     const element = intro.current;
     element.hidden = false;
     // CSS owns the timeline. The timeout is only a failsafe, not a second animation clock.
-    const timer = window.setTimeout(finish, 1600);
+    const timer = window.setTimeout(finish, 2700);
+    // The page beneath starts its own entrance as the seal breaks and the doors open.
+    const opening = window.setTimeout(() => element.setAttribute('data-opening', ''), 1350);
     const onEnd = (event: AnimationEvent) => {
       if (event.target === element && event.animationName === 'aliceLoaderOut') finish();
     };
@@ -41,6 +43,8 @@ export default function SiteIntro() {
     window.addEventListener('scroll', finish, { passive: true, once: true });
     const release = () => {
       window.clearTimeout(timer);
+      window.clearTimeout(opening);
+      element.removeAttribute('data-opening');
       element.removeEventListener('animationend', onEnd);
       document.removeEventListener('keydown', onKey);
       document.removeEventListener('visibilitychange', onVisibility);
@@ -56,10 +60,14 @@ export default function SiteIntro() {
   }, [finish]);
 
   return (
-    <div className="alice-loader" ref={intro} hidden>
-      <div className="alice-file" aria-hidden="true">
-        <OfficeLogo light />
-        <small>Advocacia Especializada</small>
+    <div className="alice-loader seal-intro" ref={intro} hidden>
+      <div className="seal-door seal-door-a" aria-hidden="true" />
+      <div className="seal-door seal-door-b" aria-hidden="true" />
+      <div className="seal-stage" aria-hidden="true">
+        <span className="seal-ripple" />
+        <div className="seal-half seal-half-a"><WaxSeal id="seal-a" /></div>
+        <div className="seal-half seal-half-b"><WaxSeal id="seal-b" /></div>
+        <span className="seal-shine" />
       </div>
       <p>Cada caso exige uma leitura individualizada.</p>
       <button className="intro-skip" type="button" onClick={finish}>Entrar no site <span aria-hidden="true">↗</span></button>

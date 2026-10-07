@@ -2,7 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import { assetPath } from './asset-path';
 import './globals.css';
 import './client-revision-2026-09-18.css';
+import './acabamento-final-2026-10-06.css';
 import SiteIntro from './site-intro';
+import MotionFinish from './components/motion-finish';
 import { allowIndexing, siteOrigin } from './site-settings';
 
 export const metadata: Metadata = {
@@ -58,7 +60,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" data-scroll-behavior="smooth">
-      <body><SiteIntro />{children}</body>
+      <body><SiteIntro /><MotionFinish />{children}</body>
     </html>
   );
 }

@@ -37,7 +37,7 @@ export default function HellenPage() {
         <div className="credentials-bar hellen-credentials"><span>Direito Civil e Empresarial</span></div>
 
         <section id="atuacao" className="hellen-practice light-chapter section-shell" aria-labelledby="hellen-practice-title">
-          <header className="section-heading"><div><p className="eyebrow">Áreas de atuação</p></div><h2 id="hellen-practice-title">Orientação para decidir. Estratégia para agir</h2></header>
+          <header className="section-heading"><div><p className="eyebrow">Áreas de atuação</p></div><h2 id="hellen-practice-title">Orientação para decidir. Estratégia para agir.</h2></header>
           <div className="hellen-practice-grid">
             {hellenPractice.map(area => <article key={area.title}><span className="practice-number">{area.number}</span><h3>{area.title}</h3><p>{area.text}</p></article>)}
           </div>

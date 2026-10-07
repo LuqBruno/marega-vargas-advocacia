@@ -7,12 +7,12 @@ import sharp from 'sharp';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const read = file => readFile(resolve(root, file), 'utf8');
-const [officePage, alicePage, hellenPage, header, profileContact, locationMap, aliceData, hellenData, layout, intro, css, clientRevisionCss, settings, robots, logo] = await Promise.all([
+const [officePage, alicePage, hellenPage, header, profileContact, locationMap, aliceData, hellenData, layout, intro, css, clientRevisionCss, settings, robots, logo, waxSeal] = await Promise.all([
   'app/page.tsx', 'app/alice-vargas/page.tsx', 'app/hellen-marega/page.tsx',
   'app/components/site-header.tsx', 'app/components/profile-contact.tsx',
   'app/components/location-map.tsx', 'app/site-data.ts', 'app/hellen-data.ts',
   'app/layout.tsx', 'app/site-intro.tsx', 'app/globals.css', 'app/client-revision-2026-09-18.css', 'app/site-settings.ts',
-  'app/robots.ts', 'app/components/office-logo.tsx',
+  'app/robots.ts', 'app/components/office-logo.tsx', 'app/components/wax-seal.tsx',
 ].map(read));
 const sources = officePage + alicePage + hellenPage + header + profileContact + locationMap + layout;
 const alice = await import(`data:text/javascript;base64,${Buffer.from(aliceData).toString('base64')}`);
@@ -139,12 +139,14 @@ test('Office address and hours match the supplied client data', () => {
 });
 
 test('Loader now represents the office rather than a single professional', () => {
-  assert.match(intro, /<OfficeLogo light/);
-  assert.match(intro, /Advocacia Especializada/);
+  // Vinheta do lacre (06/10/2026): o monograma oficial vem da logo champanhe dentro do lacre.
+  assert.match(intro, /<WaxSeal id=/);
+  assert.match(waxSeal, /marega-vargas-champanhe\.webp/);
   assert.doesNotMatch(intro, /Alice Vargas|Hellen Maréga/);
   assert.match(intro, /Cada caso exige uma leitura individualizada/);
   assert.match(intro, /prefers-reduced-motion: reduce/);
-  assert.match(intro, /setTimeout\(finish, 1600\)/);
+  assert.match(intro, /setTimeout\(finish, 2700\)/);
+  assert.match(intro, /className="intro-skip"/);
 });
 
 test('Preview indexing remains an explicit launch decision', () => {
@@ -154,9 +156,10 @@ test('Preview indexing remains an explicit launch decision', () => {
   assert.match(layout, /Maréga e Vargas \| Advocacia Especializada/);
 });
 
-test('No extra motion, analytics or tracking dependency was introduced', async () => {
+test('Only the approved Motion library was added; no analytics or tracking dependency', async () => {
   const pkg = JSON.parse(await read('package.json'));
-  assert.deepEqual(Object.keys(pkg.dependencies).sort(), ['next', 'react', 'react-dom']);
+  // Motion foi autorizado por Bruno em 06/10/2026 para o acabamento leve de entradas (app/components/motion-finish.tsx).
+  assert.deepEqual(Object.keys(pkg.dependencies).sort(), ['motion', 'next', 'react', 'react-dom']);
   assert.doesNotMatch(sources + layout, /googletagmanager|facebook\.net|analytics\.js/);
 });
 
