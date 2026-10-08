@@ -3,6 +3,15 @@
 /* Biografias institucionais em branco sobre o grafite atual (pedido de 06/10/2026). O grafite não muda. */
 .professional-copy > p:not(.eyebrow) { color: #fff; }
 
+/* Off-white dos fundos claros (retoque de 08/10/2026): mantém a prévia local e aquece o tom só um pouco.
+   Só as superfícies claras mudam; o champagne segue como cor de texto sobre o grafite, nos botões e na logo. */
+:root { --paper: #f0ece5; }
+.office-areas,
+.light-chapter,
+.hellen-about,
+.perspective-statement,
+.perspective-composition blockquote { background: var(--paper); }
+
 /* Retorno das clientes em 18/09/2026.
    Os blocos riscados foram removidos do conteúdo em todos os tamanhos.
    Este arquivo concentra apenas o refinamento de composição decorrente disso. */
