@@ -136,6 +136,8 @@ test('Office address and hours match the supplied client data', () => {
   assert.match(locationMap, /href=\{mapsHref\}/);
   assert.match(locationMap, /src=\{mapsEmbedHref\}/);
   assert.match(locationMap, /loading="eager"/);
+  assert.match(aliceData, /officeMapReference = '-28\.480542,-49\.001936'/);
+  assert.match(aliceData, /encodeURIComponent\(officeMapReference\)/);
 });
 
 test('Loader now represents the office rather than a single professional', () => {

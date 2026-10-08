@@ -5,7 +5,7 @@ export default function LocationMap() {
     <div className="location-map">
       <iframe
         src={mapsEmbedHref}
-        title="Localização do escritório Maréga e Vargas no Google Maps"
+        title="Referência de localização do escritório Maréga e Vargas, próximo ao Subway na Avenida Marcolino Martins Cabral, em Tubarão"
         loading="eager"
         allowFullScreen
         referrerPolicy="no-referrer-when-downgrade"

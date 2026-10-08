@@ -26,8 +26,11 @@ export const office = {
   hours: 'Das 8h às 18h',
 };
 
-export const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${office.street}, ${office.complement}, ${office.neighborhood}, ${office.city} - ${office.state}, ${office.postalCode}`)}`;
-export const mapsEmbedHref = `https://www.google.com/maps?q=${encodeURIComponent(`${office.street}, ${office.neighborhood}, ${office.city} - ${office.state}, ${office.postalCode}`)}&output=embed`;
+// Coordenadas do marco indicado pela cliente (Subway na Av. Marcolino Martins Cabral),
+// usadas para manter o mapa no local correto em vez de deixar o Google escolher outro ponto.
+const officeMapReference = '-28.480542,-49.001936';
+export const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeMapReference)}`;
+export const mapsEmbedHref = `https://www.google.com/maps?q=${encodeURIComponent(officeMapReference)}&z=17&output=embed`;
 export const whatsappHref = `https://wa.me/${profile.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Olá, Alice! Gostaria de informações sobre o atendimento.')}`;
 
 export const practiceAreas = [
