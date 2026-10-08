@@ -35,10 +35,10 @@ export const whatsappHref = `https://wa.me/${profile.whatsapp.replace(/\D/g, '')
 
 export const practiceAreas = [
   { number: '01', title: 'Divórcio', text: 'Orientação para o fim do vínculo conjugal, com atenção à partilha de bens, aos acordos e às particularidades de cada família.', tags: ['Separação', 'Partilha de bens', 'Acordos'] },
-  { number: '02', title: 'Pensão alimentícia', text: 'Atuação em fixação, revisão e cobrança de alimentos, com análise cuidadosa das necessidades e possibilidades de cada caso.', tags: ['Fixação', 'Revisão', 'Cobrança'] },
+  { number: '02', title: 'Inventário', text: 'Acompanhamento na organização de bens, herdeiros e documentos para conduzir a sucessão de acordo com cada situação.', tags: ['Herança', 'Bens', 'Herdeiros'] },
   { number: '03', title: 'Guarda e convivência', text: 'Apoio jurídico para decisões que envolvem filhos, responsabilidades parentais e uma rotina familiar mais segura.', tags: ['Guarda', 'Convivência', 'Responsabilidade parental'] },
   { number: '04', title: 'Reconhecimento de paternidade', text: 'Orientação jurídica sobre o reconhecimento da filiação, com cuidado com a história familiar e os direitos envolvidos.', tags: ['Filiação', 'Vínculos familiares', 'Registro civil'] },
-  { number: '05', title: 'Inventário', text: 'Acompanhamento na organização de bens, herdeiros e documentos para conduzir a sucessão de acordo com cada situação.', tags: ['Herança', 'Bens', 'Herdeiros'] },
+  { number: '05', title: 'Pensão alimentícia', text: 'Atuação em fixação, revisão e cobrança de alimentos, com análise cuidadosa das necessidades e possibilidades de cada caso.', tags: ['Fixação', 'Revisão', 'Cobrança'] },
   { number: '06', title: 'Testamento', text: 'Orientação para organizar suas vontades sobre a sucessão, considerando o patrimônio, os vínculos familiares e as particularidades do seu caso.', tags: ['Últimas vontades', 'Patrimônio', 'Sucessão'] },
 ];
 

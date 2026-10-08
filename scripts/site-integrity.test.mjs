@@ -69,13 +69,13 @@ test('The institutional entry gives each specialty one unambiguous route', () =>
   assert.doesNotMatch(officePage, /WhatsApp da Alice|WhatsApp da Hellen/);
 });
 
-test('Alice client-approved information remains unchanged on her route', () => {
+test('Alice client-approved information and requested service order remain on her route', () => {
   assert.equal(alice.profile.oab, 'OAB/SC nº 43413');
   assert.equal(alice.profile.whatsapp, '+55 48 9929-2985');
   assert.equal(alice.profile.coverage, 'Atuação em todo o território nacional');
   assert.deepEqual(alice.practiceAreas.map(area => area.title), [
-    'Divórcio', 'Pensão alimentícia', 'Guarda e convivência',
-    'Reconhecimento de paternidade', 'Inventário', 'Testamento',
+    'Divórcio', 'Inventário', 'Guarda e convivência',
+    'Reconhecimento de paternidade', 'Pensão alimentícia', 'Testamento',
   ]);
   assert.match(alicePage, /alice-vargas-05-hd\.webp/);
   assert.match(alicePage, /alice-vargas-07-hd\.webp/);
