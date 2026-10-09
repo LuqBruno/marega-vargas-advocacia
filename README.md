@@ -27,6 +27,11 @@ e sem imagens quebradas.
 
 ## Conteúdo aprovado nesta revisão
 
+### Ajuste de apresentação — 09/10/2026
+
+- No bloco institucional “Quem somos”, removida a referência redundante à graduação de Alice em Direito.
+- Resumo de Hellen e frase final de sua apresentação atualizados conforme capturas das mensagens encaminhadas por Bruno; sem inclusão de credenciais ou promessas não fornecidas.
+
 - navegação institucional na ordem Escritório, Áreas de atuação, Profissionais e Contato;
 - abertura institucional sem retratos, com o texto “Família, patrimônio, negócios e contratos” e “Cada caso exige uma leitura individualizada”;
 - Áreas de atuação antes de Quem somos;

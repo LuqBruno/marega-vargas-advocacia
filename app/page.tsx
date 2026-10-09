@@ -72,7 +72,7 @@ export default function OfficeHome() {
                 <p className="eyebrow">Família e Sucessões</p>
                 <h3>Alice Vargas</h3>
                 <small>{profile.oab}</small>
-                <p>Graduada em Direito, Pós-Graduada em Direito Processual Civil e em Direito de Família e Sucessões. Há mais de 12 anos atua em questões familiares e sucessórias.</p>
+                <p>Pós-Graduada em Direito Processual Civil e em Direito de Família e Sucessões. Há mais de 12 anos atua em questões familiares e sucessórias.</p>
                 <p>Professora Universitária, Mentora de Jovens Advogados da Subseção de Tubarão/SC e membro do Instituto Brasileiro de Direito de Família (IBDFAM).</p>
                 <Link className="text-link" href="/alice-vargas#atuacao">Conhecer a atuação de Alice <span aria-hidden="true">↗</span></Link>
               </div>
@@ -86,7 +86,7 @@ export default function OfficeHome() {
                 <p className="eyebrow">Civil e Empresarial</p>
                 <h3>Hellen Maréga</h3>
                 <small>{hellenProfile.oab}</small>
-                <p>Graduada em Direito, Pós-Graduada e Especialista em Direito Civil e Empresarial e Mentora de Jovens Advogados da Subseção de Tubarão/SC.</p>
+                <p>Advogada desde 2014, é Pós-graduada e especialista em Direito Civil e Empresarial, além de Mentora de Jovens Advogados da OAB/SC, Subseção de Tubarão.</p>
                 <Link className="text-link" href="/hellen-marega#atuacao">Conhecer a atuação de Hellen <span aria-hidden="true">↗</span></Link>
               </div>
             </article>

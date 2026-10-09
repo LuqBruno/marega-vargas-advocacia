@@ -46,7 +46,7 @@ export default function HellenPage() {
 
         <section id="sobre" className="hellen-about" aria-labelledby="hellen-about-title">
           <div className="hellen-editorial-photo"><Image src={assetPath('/images/client/hellen/hellen-2.jpg')} alt="Retrato profissional de Hellen Maréga" fill sizes="(max-width: 760px) 100vw, 44vw" /></div>
-          <div className="hellen-about-copy"><p className="eyebrow">Hellen Maréga · {hellenProfile.oab}</p><h2 id="hellen-about-title">Técnica para orientar. Transparência para apresentar riscos e soluções.</h2><p>Pós-graduada e especialista em Direito Civil e Empresarial, Hellen Maréga possui mais de 12 anos de experiência jurídica e atua como Mentora de Jovens Advogados na Subseção de Tubarão/SC.</p><p>Sua atuação prioriza a análise criteriosa e a estratégia individualizada para cada caso.</p></div>
+          <div className="hellen-about-copy"><p className="eyebrow">Hellen Maréga · {hellenProfile.oab}</p><h2 id="hellen-about-title">Técnica para orientar. Transparência para apresentar riscos e soluções.</h2><p>Pós-graduada e especialista em Direito Civil e Empresarial, Hellen Maréga possui mais de 12 anos de experiência jurídica e atua como Mentora de Jovens Advogados na Subseção de Tubarão/SC.</p><p>Na condução de negócios e na gestão de patrimônio, adota uma abordagem criteriosa, pautada pelo rigor técnico na análise de riscos e na definição de estratégias alinhadas aos interesses de cada cliente.</p></div>
         </section>
 
         <section id="conteudo" className="hellen-perspective section-shell" aria-labelledby="perspective-title">

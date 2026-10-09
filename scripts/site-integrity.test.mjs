@@ -216,6 +216,10 @@ test('Requested institutional revision is present without the removed blocks', (
   assert.doesNotMatch(officePage, /id="escritorio"|Conheça nosso escritório/);
   assert.ok(officePage.indexOf('id="areas"') < officePage.indexOf('id="profissionais"'));
   assert.match(officePage, /professional-profile[\s\S]*alice-vargas-07-hd\.webp[\s\S]*professional-profile-reverse[\s\S]*hellen-1\.jpg/);
+  assert.match(officePage, /Pós-Graduada em Direito Processual Civil e em Direito de Família e Sucessões/);
+  assert.doesNotMatch(officePage, /<p>Graduada em Direito, Pós-Graduada em Direito Processual Civil/);
+  assert.match(officePage, /Advogada desde 2014, é Pós-graduada e especialista em Direito Civil e Empresarial, além de Mentora de Jovens Advogados da OAB\/SC, Subseção de Tubarão\./);
+  assert.match(hellenPage, /Na condução de negócios e na gestão de patrimônio, adota uma abordagem criteriosa, pautada pelo rigor técnico na análise de riscos e na definição de estratégias alinhadas aos interesses de cada cliente\./);
   assert.match(alicePage, /practice-section light-chapter/);
   assert.match(hellenPage, /hellen-practice light-chapter/);
   assert.equal((aliceData.match(/number: '0[1-6]'/g) ?? []).length, 6);
